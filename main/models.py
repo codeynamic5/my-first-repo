@@ -1,7 +1,9 @@
 from django.db import models
+import uuid
 
 class MoodEntry(models.Model):
-    mood = models.CharField(max_length=255)
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    mood = models.CharField(max_length=255, default="")
     time = models.DateField(auto_now_add=True)
     feelings = models.TextField()
     mood_intensity = models.IntegerField()
