@@ -1,5 +1,5 @@
 from django.urls import path
-from main.views import *
+from main.views import * #edit_mood, #delete_mood
 
 app_name = 'main'
 
@@ -13,4 +13,6 @@ urlpatterns = [
     path('register/', register, name='register'),
     path('login/', login_user, name='login'),
     path('logout/', logout_user, name='logout'),
+    path('edit-mood/<uuid:id>', edit_mood, name='edit_mood'),
+    path('delete/<uuid:id>', delete_mood, name='delete_mood'), # sesuaikan dengan nama fungsi yang dibuat
 ]
